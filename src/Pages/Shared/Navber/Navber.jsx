@@ -7,10 +7,20 @@ const Navber = () => {
     <>
       <li>
         <NavLink>Services</NavLink>
+      </li>
+      <li>
         <NavLink>Coverage</NavLink>
+      </li>
+      <li>
         <NavLink>About Us</NavLink>
+      </li>
+      <li>
         <NavLink>Pricing</NavLink>
+      </li>
+      <li>
         <NavLink>Blog</NavLink>
+      </li>
+      <li>
         <NavLink>Contact</NavLink>
       </li>
     </>
@@ -48,7 +58,7 @@ const Navber = () => {
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>
