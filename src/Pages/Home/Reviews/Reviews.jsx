@@ -1,55 +1,42 @@
 import React, { use } from "react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ReviewCard from "./ReviewCard";
 
 const Reviews = ({ reviewsPromise }) => {
   const reviews = use(reviewsPromise);
   console.log(reviews);
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <Swiper
+        loop={true}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
+          rotate: 30,
+          stretch: "50%",
+          depth: 200,
+          scale: 1,
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        {reviews.map((review) => (
+          <SwiperSlide key={review.id}>
+            <ReviewCard review={review}></ReviewCard>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

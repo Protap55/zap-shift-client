@@ -6,22 +6,22 @@ const Navber = () => {
   const links = (
     <>
       <li>
-        <NavLink>Services</NavLink>
+        <NavLink to="/Services">Services</NavLink>
       </li>
       <li>
-        <NavLink>Coverage</NavLink>
+        <NavLink to="/Coverage">Coverage</NavLink>
       </li>
       <li>
-        <NavLink>About Us</NavLink>
+        <NavLink to="/AboutUs">About Us</NavLink>
       </li>
       <li>
-        <NavLink>Pricing</NavLink>
+        <NavLink to="/Pricing">Pricing</NavLink>
       </li>
       <li>
-        <NavLink>Blog</NavLink>
+        <NavLink to="/Blog">Blog</NavLink>
       </li>
       <li>
-        <NavLink>Contact</NavLink>
+        <NavLink to="/Contact">Contact</NavLink>
       </li>
     </>
   );
