@@ -3,6 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useLoaderData } from "react-router";
 import { useRef } from "react";
+
 const Coverage = () => {
   const position = [23.685, 90.3563];
   const serviceCenters = useLoaderData();
@@ -14,9 +15,9 @@ const Coverage = () => {
     const district = serviceCenters.find((c) =>
       c.district.toLowerCase().includes(location.toLowerCase()),
     );
+
     if (district) {
       const coord = [district.latitude, district.longitude];
-      console.log(coord);
       mapRef.current.flyTo(coord, 8);
     }
   };

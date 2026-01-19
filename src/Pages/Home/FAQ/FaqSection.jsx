@@ -1,4 +1,5 @@
 import React from "react";
+import { GoArrowUpRight } from "react-icons/go";
 
 const FaqSection = () => {
   return (
@@ -72,6 +73,15 @@ const FaqSection = () => {
             information you provided while signing up for the restock alert.
           </div>
         </div>
+      </div>
+
+      <div className="text-center py-5">
+        <button className="btn px-8 py-4 bg-primary rounded-2xl btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl ">
+          Track Your Parcel
+        </button>
+        <button className="btn px-4 py-4 bg-[black] rounded-full btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+          <GoArrowUpRight color="#caeb66" />
+        </button>
       </div>
     </div>
   );
