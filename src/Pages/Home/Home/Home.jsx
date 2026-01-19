@@ -8,6 +8,7 @@ import Dotted from "../DottedLine/Dotted";
 import Customer from "../Customer/Customer";
 import CustomerPoster from "../CustomerPoster/CustomerPoster";
 import Reviews from "../Reviews/Reviews";
+import FaqSection from "../FAQ/FaqSection";
 const reviewsPromise = fetch("/reviews.json").then((res) => res.json());
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <Customer></Customer>
         <CustomerPoster></CustomerPoster>
         <Reviews reviewsPromise={reviewsPromise}></Reviews>
+        <FaqSection></FaqSection>
       </div>
     </div>
   );

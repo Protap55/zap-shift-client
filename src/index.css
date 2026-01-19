@@ -10,6 +10,8 @@
   --color-secondary: #03373d;
   --color-accent-content: #606060;
   --color-primary-content: #ffffff;
+  --color-neutral: #b1cfd3;
+  --color-neutral-content: #e6f2f3;
 }
 
 body {

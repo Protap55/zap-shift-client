@@ -2,29 +2,40 @@ import reviewcoat from "../../../assets/reviewQuote.png";
 
 const ReviewCard = ({ review }) => {
   const { user_photoURL, userName: Name, review: Comment, position } = review;
+
   return (
-    <div>
-      <div className="card bg-base-100 rounded-2xl  shadow-sm">
-        <div className="card-body">
+    <div className="h-full">
+      <div className="card bg-base-100 rounded-2xl shadow-sm h-full">
+        <div className="card-body space-y-4">
+          {/* Quote */}
           <img
-            className="h-12 w-12 text-accent-content"
+            className="h-10 w-10 sm:h-12 sm:w-12"
             src={reviewcoat}
             alt="review"
           />
-          <p>{Comment}</p>
-          <div className="border-b-2 border-dashed text-secondary"></div>
 
-          <div className="flex items-center justify-items-end gap-4">
+          {/* Comment */}
+          <p className="text-sm sm:text-base lg:text-lg text-base-content leading-relaxed">
+            {Comment}
+          </p>
+
+          {/* Divider */}
+          <div className="border-b border-dashed border-secondary"></div>
+
+          {/* User Info */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <img
+              className="rounded-full w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-cover"
+              src={user_photoURL}
+              alt={Name}
+            />
             <div>
-              <img
-                className="rounded-full w-20 h-20"
-                src={user_photoURL}
-                alt=""
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-secondary">{Name}</h3>
-              <p className="text-accent-content">{position}</p>
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-secondary">
+                {Name}
+              </h3>
+              <p className="text-sm sm:text-base text-accent-content">
+                {position}
+              </p>
             </div>
           </div>
         </div>
