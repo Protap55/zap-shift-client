@@ -1,11 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signInUser } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -17,6 +19,7 @@ const Login = () => {
     signInUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +75,11 @@ const Login = () => {
         </fieldset>
         <p>
           Don’t have any account?
-          <Link className="text-primary font-bold" to="/register">
+          <Link
+            state={location?.state || "/"}
+            className="text-primary font-bold"
+            to="/register"
+          >
             Register
           </Link>
         </p>
